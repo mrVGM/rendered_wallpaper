@@ -4,6 +4,8 @@
 
 #include "tasks.h"
 
+#include <chrono>
+#include <thread>
 #include <windef.h>
 
 namespace
@@ -133,6 +135,7 @@ HWND wp::creteRenderWindow()
                 TranslateMessage(&msg);
                 DispatchMessage(&msg);
             }
+            std::this_thread::sleep_for(std::chrono::milliseconds(10));
         }
     });
 
