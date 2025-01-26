@@ -46,7 +46,7 @@ vec2 rot(vec2 p, float a) {
 float4 main(vertex_to_pixel IN) : SV_TARGET
 {
     float2 fragCoord = IN.uv * iResolution.xy;
-    float time = iTime;
+    float time = iTime / 10.0;
 	vec2 uv = ( fragCoord.xy / iResolution.xy ) * 2.0 - 1.0;
 	uv.x *= iResolution.x /  iResolution.y;
 	vec3 dir = normalize(vec3(uv, 1.0));
